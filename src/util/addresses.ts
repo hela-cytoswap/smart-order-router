@@ -21,7 +21,7 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].v3CoreFactoryAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].v3CoreFactoryAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].v3CoreFactoryAddress,
-  [ChainId.HELA]: CHAIN_TO_ADDRESSES_MAP[ChainId.HELA].v3MigratorAddress
+  [ChainId.HELA]: CHAIN_TO_ADDRESSES_MAP[ChainId.HELA].v3CoreFactoryAddress
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
