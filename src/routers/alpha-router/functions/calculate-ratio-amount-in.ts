@@ -1,4 +1,4 @@
-import { Fraction } from '@uniswap/sdk-core';
+import { Fraction } from '@swapnity/sdk-core';
 
 import { CurrencyAmount } from '../../../util/amounts';
 
