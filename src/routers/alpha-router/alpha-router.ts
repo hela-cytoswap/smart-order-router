@@ -474,6 +474,39 @@ export class AlphaRouter
             }
           );
           break;
+        case ChainId.HELA:
+          this.onChainQuoteProvider = new OnChainQuoteProvider(
+            chainId,
+            provider,
+            this.multicall2Provider,
+            {
+              retries: 2,
+              minTimeout: 100,
+              maxTimeout: 1000,
+            },
+            {
+              multicallChunk: 50,
+              gasLimitPerCall: 500_000,
+              quoteMinSuccessRate: 0.2,
+            },
+            {
+              gasLimitOverride: 500_000,
+              multicallChunk: 50,
+            },
+            {
+              gasLimitOverride: 500_000,
+              multicallChunk: 50,
+            },
+            {
+              baseBlockOffset: -10,
+              rollback: {
+                enabled: true,
+                attemptsBeforeRollback: 1,
+                rollbackBlockOffset: -10,
+              },
+            }
+          );
+          break;
         default:
           this.onChainQuoteProvider = new OnChainQuoteProvider(
             chainId,
