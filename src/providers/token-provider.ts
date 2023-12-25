@@ -542,31 +542,31 @@ export const HETH_HELA = new Token(
   ChainId.HELA,
   '0x42D8513433BC5f7cE9Ed7aaE612d1B2177Fe436A',
   18,
-  'HETH',
-  'Hela Ethereum'
+  'hETH',
+  'Hela Wrapped Ether'
 );
 
 export const HUSDC_HELA = new Token(
   ChainId.HELA,
-  '0x992f7D2e6C95Cdb3136750C1AE4138B5B8F79db4',
+  '0x945fcda98b56ab68541c62f40b8b3785366152bd',
   18,
-  'HUSDC',
-  'Hela USD Coin'
+  'hUSDC',
+  'Hela USDC'
 );
 
 export const HBTC_HELA = new Token(
   ChainId.HELA,
-  '0xdE00Dc04c87dCAbe6611d77C4D475c925a335fC6',
+  '0xde00dc04c87dcabe6611d77c4d475c925a335fc6',
   18,
-  'HBTC',
-  'Hela BTC'
+  'hBTC',
+  'Hela Wrapped Bitcoin'
 );
 
 export const USDT_HELA = new Token(
   ChainId.HELA,
-  '0xF319d86D9d3e49d3E5298C85c8F36f1cbdF16C5d',
+  '0x794a210a6f8b3c26998ed70220321f14b50ab7da',
   18,
-  'USDT',
+  'hUSDT',
   'Hela USDT'
 );
 

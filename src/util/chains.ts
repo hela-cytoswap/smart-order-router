@@ -418,8 +418,8 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     ChainId.HELA,
     '0xc544f0b5C0259172b6D6a1f6394aB21B5fd8F4Bf',
     18,
-    'WETH',
-    'Wrapped Ether'
+    'WHLUSD',
+    'Wrapped HLUSD'
   )
 };
 
