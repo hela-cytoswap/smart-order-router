@@ -1,7 +1,7 @@
 import { Logger } from '@ethersproject/logger';
 import { flags } from '@oclif/command';
-import { Protocol } from '@uniswap/router-sdk';
-import { Currency, Percent, TradeType } from '@swapnity/sdk-core';
+import { Protocol } from '@cytoswap/router-sdk';
+import { Currency, Percent, TradeType } from '@cytoswap/sdk-core';
 import dotenv from 'dotenv';
 import _ from 'lodash';
 
@@ -15,7 +15,7 @@ Logger.globalLogger();
 Logger.setLogLevel(Logger.levels.DEBUG);
 
 export class Quote extends BaseCommand {
-  static description = 'Uniswap Smart Order Router CLI';
+  static description = 'Cytoswap Smart Order Router CLI';
 
   static flags = {
     ...BaseCommand.flags,

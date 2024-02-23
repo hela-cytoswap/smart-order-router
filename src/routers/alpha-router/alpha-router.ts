@@ -1,10 +1,10 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider, JsonRpcProvider } from '@ethersproject/providers';
 import DEFAULT_TOKEN_LIST from '@uniswap/default-token-list';
-import { Protocol, SwapRouter, Trade } from '@uniswap/router-sdk';
-import { ChainId, Currency, Fraction, Token, TradeType } from '@swapnity/sdk-core';
+import { Protocol, SwapRouter, Trade } from '@cytoswap/router-sdk';
+import { ChainId, Currency, Fraction, Token, TradeType } from '@cytoswap/sdk-core';
 import { TokenList } from '@uniswap/token-lists';
-import { Pool, Position, SqrtPriceMath, TickMath } from '@uniswap/v3-sdk';
+import { Pool, Position, SqrtPriceMath, TickMath } from '@cytoswap/v3-sdk';
 import retry from 'async-retry';
 import JSBI from 'jsbi';
 import _ from 'lodash';
@@ -34,7 +34,7 @@ import {
   StaticV2SubgraphProvider,
   StaticV3SubgraphProvider,
   SwapRouterProvider,
-  UniswapMulticallProvider,
+  CytoswapMulticallProvider,
   URISubgraphProvider,
   V2QuoteProvider,
   V2SubgraphProviderWithFallBacks,
@@ -112,7 +112,7 @@ export type AlphaRouterParams = {
    * The provider to use for making multicalls. Used for getting on-chain data
    * like pools, tokens, quotes in batch.
    */
-  multicall2Provider?: UniswapMulticallProvider;
+  multicall2Provider?: CytoswapMulticallProvider;
   /**
    * The provider for getting all pools that exist on V3 from the Subgraph. The pools
    * from this provider are filtered during the algorithm to a set of candidate pools.
@@ -165,7 +165,7 @@ export type AlphaRouterParams = {
   mixedRouteGasModelFactory?: IOnChainGasModelFactory;
   /**
    * A token list that specifies Token that should be blocked from routing through.
-   * Defaults to Uniswap's unsupported token list.
+   * Defaults to Cytoswap's unsupported token list.
    */
   blockedTokenListProvider?: ITokenListProvider;
 
@@ -247,7 +247,7 @@ export type ProtocolPoolSelection = {
   /**
    * The top N pools for token in and token out that involve a token from a list of
    * hardcoded 'base tokens'. These are standard tokens such as WETH, USDC, DAI, etc.
-   * This is similar to how the legacy routing algorithm used by Uniswap would select
+   * This is similar to how the legacy routing algorithm used by Cytoswap would select
    * pools and is intended to make the new pool selection algorithm close to a superset
    * of the old algorithm.
    */
@@ -320,7 +320,7 @@ export class AlphaRouter
     ISwapToRatio<AlphaRouterConfig, SwapAndAddConfig> {
   protected chainId: ChainId;
   protected provider: BaseProvider;
-  protected multicall2Provider: UniswapMulticallProvider;
+  protected multicall2Provider: CytoswapMulticallProvider;
   protected v3SubgraphProvider: IV3SubgraphProvider;
   protected v3PoolProvider: IV3PoolProvider;
   protected onChainQuoteProvider: IOnChainQuoteProvider;
@@ -371,7 +371,7 @@ export class AlphaRouter
     this.provider = provider;
     this.multicall2Provider =
       multicall2Provider ??
-      new UniswapMulticallProvider(chainId, provider, 375_000);
+      new CytoswapMulticallProvider(chainId, provider, 375_000);
     this.v3PoolProvider =
       v3PoolProvider ??
       new CachingV3PoolProvider(

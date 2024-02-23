@@ -1,4 +1,4 @@
-import { Token } from '@swapnity/sdk-core';
+import { Token } from '@cytoswap/sdk-core';
 
 import { log } from '../../util';
 import { ProviderConfig } from '../provider';

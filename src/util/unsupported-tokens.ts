@@ -8,7 +8,7 @@ export const UNSUPPORTED_TOKENS = {
   },
   tags: {},
   logoURI: 'ipfs://QmNa8mQkrNKp1WEEeGjFezDmDeodkWRevGFN8JCV7b4Xir',
-  keywords: ['uniswap', 'unsupported', 'broken'],
+  keywords: ['cytoswap', 'unsupported', 'broken'],
   tokens: [
     {
       name: 'USD Token',

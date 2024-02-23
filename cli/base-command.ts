@@ -4,8 +4,8 @@ import { JsonRpcProvider } from '@ethersproject/providers';
 import { Command, flags } from '@oclif/command';
 import { ParserOutput } from '@oclif/parser/lib/parse';
 import DEFAULT_TOKEN_LIST from '@uniswap/default-token-list';
-import { ChainId, Currency, CurrencyAmount, Token } from '@swapnity/sdk-core';
-import { MethodParameters } from '@uniswap/v3-sdk';
+import { ChainId, Currency, CurrencyAmount, Token } from '@cytoswap/sdk-core';
+import { MethodParameters } from '@cytoswap/v3-sdk';
 import bunyan, { default as Logger } from 'bunyan';
 import bunyanDebugStream from 'bunyan-debug-stream';
 import _ from 'lodash';
@@ -40,7 +40,7 @@ import {
   SimulationStatus,
   TenderlySimulator,
   TokenProvider,
-  UniswapMulticallProvider,
+  CytoswapMulticallProvider,
   V2PoolProvider,
   V3PoolProvider,
   V3RouteWithValidQuote,
@@ -122,7 +122,7 @@ export abstract class BaseCommand extends Command {
   private _tokenProvider: ITokenProvider | null = null;
   private _poolProvider: IV3PoolProvider | null = null;
   private _blockNumber: number | null = null;
-  private _multicall2Provider: UniswapMulticallProvider | null = null;
+  private _multicall2Provider: CytoswapMulticallProvider | null = null;
 
   get logger() {
     return this._log
@@ -193,7 +193,7 @@ export abstract class BaseCommand extends Command {
     // initialize logger
     const logLevel = debug || debugJSON ? bunyan.DEBUG : bunyan.INFO;
     this._log = bunyan.createLogger({
-      name: 'Uniswap Smart Order Router',
+      name: 'Cytoswap Smart Order Router',
       serializers: bunyan.stdSerializers,
       level: logLevel,
       streams: debugJSON
@@ -249,7 +249,7 @@ export abstract class BaseCommand extends Command {
       );
     }
 
-    const multicall2Provider = new UniswapMulticallProvider(chainId, provider);
+    const multicall2Provider = new CytoswapMulticallProvider(chainId, provider);
     this._multicall2Provider = multicall2Provider;
     this._poolProvider = new V3PoolProvider(chainId, multicall2Provider);
 

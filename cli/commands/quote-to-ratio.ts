@@ -1,7 +1,7 @@
 import { Logger } from '@ethersproject/logger';
 import { flags } from '@oclif/command';
-import { Currency, Ether, Fraction, Percent } from '@swapnity/sdk-core';
-import { Position } from '@uniswap/v3-sdk';
+import { Currency, Ether, Fraction, Percent } from '@cytoswap/sdk-core';
+import { Position } from '@cytoswap/v3-sdk';
 import dotenv from 'dotenv';
 import {
   ID_TO_CHAIN_ID,
@@ -18,7 +18,7 @@ Logger.globalLogger();
 Logger.setLogLevel(Logger.levels.DEBUG);
 
 export class QuoteToRatio extends BaseCommand {
-  static description = 'Uniswap Smart Order Router CLI';
+  static description = 'Cytoswap Smart Order Router CLI';
 
   static flags = {
     ...BaseCommand.flags,

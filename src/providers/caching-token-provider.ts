@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@swapnity/sdk-core';
+import { ChainId, Token } from '@cytoswap/sdk-core';
 import _ from 'lodash';
 
 import { log, WRAPPED_NATIVE_CURRENCY } from '../util';

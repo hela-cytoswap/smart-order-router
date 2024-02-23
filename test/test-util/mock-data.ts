@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Token } from '@swapnity/sdk-core';
+import { ChainId, Token } from '@cytoswap/sdk-core';
 import { TokenList } from '@uniswap/token-lists';
-import { Pair } from '@uniswap/v2-sdk';
-import { encodeSqrtRatioX96, FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { Pair } from '@cytoswap/v2-sdk';
+import { encodeSqrtRatioX96, FeeAmount, Pool } from '@cytoswap/v3-sdk';
 import _ from 'lodash';
 import {
   AlphaRouterConfig,
@@ -278,7 +278,7 @@ export const mockTokenList: TokenList = {
   },
   tags: {},
   logoURI: 'ipfs://QmNa8mQkrNKp1WEEeGjFezDmDeodkWRevGFN8JCV7b4Xir',
-  keywords: ['uniswap'],
+  keywords: ['cytoswap'],
   tokens: [
     {
       name: 'USD//C',

@@ -1,7 +1,7 @@
-import { CHAIN_TO_ADDRESSES_MAP, ChainId, Token } from '@swapnity/sdk-core';
-import { FACTORY_ADDRESS } from '@uniswap/v3-sdk';
+import { CHAIN_TO_ADDRESSES_MAP, ChainId, Token } from '@cytoswap/sdk-core';
+import { FACTORY_ADDRESS } from '@cytoswap/v3-sdk';
 
-import { NETWORKS_WITH_SAME_UNISWAP_ADDRESSES } from './chains';
+import { NETWORKS_WITH_SAME_CYTOSWAP_ADDRESSES } from './chains';
 
 export const BNB_TICK_LENS_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.BNB].tickLensAddress;
 export const BNB_NONFUNGIBLE_POSITION_MANAGER_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.BNB].nonfungiblePositionManagerAddress;
@@ -45,7 +45,7 @@ export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
   [ChainId.GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].v1MixedRouteQuoterAddress,
 };
 
-export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
+export const CYTOSWAP_MULTICALL_ADDRESSES: AddressMap = {
   ...constructSameAddressMap('0x1F98415757620B543A52E61c46B32eB19261F984'),
   [ChainId.CELO]: CHAIN_TO_ADDRESSES_MAP[ChainId.CELO].multicallAddress,
   [ChainId.CELO_ALFAJORES]: CHAIN_TO_ADDRESSES_MAP[ChainId.CELO_ALFAJORES].multicallAddress,
@@ -84,7 +84,7 @@ export function constructSameAddressMap<T extends string>(
   address: T,
   additionalNetworks: ChainId[] = []
 ): { [chainId: number]: T } {
-  return NETWORKS_WITH_SAME_UNISWAP_ADDRESSES.concat(
+  return NETWORKS_WITH_SAME_CYTOSWAP_ADDRESSES.concat(
     additionalNetworks
   ).reduce<{
     [chainId: number]: T;

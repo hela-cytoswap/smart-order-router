@@ -1,4 +1,4 @@
-import { ChainId, Currency, Ether, NativeCurrency, Token } from '@swapnity/sdk-core';
+import { ChainId, Currency, Ether, NativeCurrency, Token } from '@cytoswap/sdk-core';
 
 // WIP: Gnosis, Moonbeam
 export const SUPPORTED_CHAINS: ChainId[] = [
@@ -35,7 +35,7 @@ export const HAS_L1_FEE = [
   ChainId.BASE_GOERLI,
 ];
 
-export const NETWORKS_WITH_SAME_UNISWAP_ADDRESSES = [
+export const NETWORKS_WITH_SAME_CYTOSWAP_ADDRESSES = [
   ChainId.MAINNET,
   ChainId.GOERLI,
   ChainId.OPTIMISM,

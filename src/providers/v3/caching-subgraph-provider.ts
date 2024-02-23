@@ -1,4 +1,4 @@
-import { ChainId } from '@swapnity/sdk-core';
+import { ChainId } from '@cytoswap/sdk-core';
 
 import { ICache } from './../cache';
 import { IV3SubgraphProvider, V3SubgraphPool } from './subgraph-provider';

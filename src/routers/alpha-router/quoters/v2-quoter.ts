@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Currency, Token, TradeType } from '@swapnity/sdk-core';
+import { ChainId, Currency, Token, TradeType } from '@cytoswap/sdk-core';
 import _ from 'lodash';
 
 import {

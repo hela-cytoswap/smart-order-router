@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Token } from '@swapnity/sdk-core';
-import { Pool } from '@uniswap/v3-sdk';
+import { ChainId, Token } from '@cytoswap/sdk-core';
+import { Pool } from '@cytoswap/v3-sdk';
 
 import { ProviderConfig } from '../../../providers/provider';
 import {

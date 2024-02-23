@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Percent, Price, TradeType } from '@swapnity/sdk-core';
-import { Pool } from '@uniswap/v3-sdk';
+import { ChainId, Percent, Price, TradeType } from '@cytoswap/sdk-core';
+import { Pool } from '@cytoswap/v3-sdk';
 import _ from 'lodash';
 
 import { SwapOptionsUniversalRouter, SwapType, WRAPPED_NATIVE_CURRENCY, } from '../../../..';

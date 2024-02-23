@@ -4,9 +4,9 @@ import {
   encodeMixedRouteToPath,
   MixedRouteSDK,
   Protocol,
-} from '@uniswap/router-sdk';
-import { ChainId } from '@swapnity/sdk-core';
-import { encodeRouteToPath } from '@uniswap/v3-sdk';
+} from '@cytoswap/router-sdk';
+import { ChainId } from '@cytoswap/sdk-core';
+import { encodeRouteToPath } from '@cytoswap/v3-sdk';
 import retry, { Options as RetryOptions } from 'async-retry';
 import _ from 'lodash';
 import stats from 'stats-lite';
@@ -24,7 +24,7 @@ import { log } from '../util/log';
 import { routeToString } from '../util/routes';
 
 import { Result } from './multicall-provider';
-import { UniswapMulticallProvider } from './multicall-uniswap-provider';
+import { CytoswapMulticallProvider } from './multicall-cytoswap-provider';
 import { ProviderConfig } from './provider';
 
 /**
@@ -256,7 +256,7 @@ export class OnChainQuoteProvider implements IOnChainQuoteProvider {
    * @param chainId The chain to get quotes for.
    * @param provider The web 3 provider.
    * @param multicall2Provider The multicall provider to use to get the quotes on-chain.
-   * Only supports the Uniswap Multicall contract as it needs the gas limitting functionality.
+   * Only supports the Cytoswap Multicall contract as it needs the gas limitting functionality.
    * @param retryOptions The retry options for each call to the multicall.
    * @param batchParams The parameters for each batched call to the multicall.
    * @param gasErrorFailureOverride The gas and chunk parameters to use when retrying a batch that failed due to out of gas.
@@ -267,8 +267,8 @@ export class OnChainQuoteProvider implements IOnChainQuoteProvider {
   constructor(
     protected chainId: ChainId,
     protected provider: BaseProvider,
-    // Only supports Uniswap Multicall as it needs the gas limitting functionality.
-    protected multicall2Provider: UniswapMulticallProvider,
+    // Only supports Cytoswap Multicall as it needs the gas limitting functionality.
+    protected multicall2Provider: CytoswapMulticallProvider,
     protected retryOptions: QuoteRetryOptions = {
       retries: DEFAULT_BATCH_RETRIES,
       minTimeout: 25,

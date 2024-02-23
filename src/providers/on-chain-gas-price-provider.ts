@@ -1,4 +1,4 @@
-import { ChainId } from '@swapnity/sdk-core';
+import { ChainId } from '@cytoswap/sdk-core';
 
 import { EIP1559GasPriceProvider } from './eip-1559-gas-price-provider';
 import { GasPrice, IGasPriceProvider } from './gas-price-provider';

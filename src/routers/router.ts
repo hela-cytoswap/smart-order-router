@@ -4,22 +4,22 @@ import {
   MixedRouteSDK,
   Protocol,
   Trade,
-} from '@uniswap/router-sdk';
+} from '@cytoswap/router-sdk';
 import {
   Currency,
   Fraction,
   Percent,
   Token,
   TradeType,
-} from '@swapnity/sdk-core';
-import { SwapOptions as UniversalRouterSwapOptions } from '@uniswap/universal-router-sdk';
-import { Route as V2RouteRaw } from '@uniswap/v2-sdk';
+} from '@cytoswap/sdk-core';
+import { SwapOptions as UniversalRouterSwapOptions } from '@cytoswap/universal-router-sdk';
+import { Route as V2RouteRaw } from '@cytoswap/v2-sdk';
 import {
   Pool,
   Position,
   MethodParameters as SDKMethodParameters,
   Route as V3RouteRaw,
-} from '@uniswap/v3-sdk';
+} from '@cytoswap/v3-sdk';
 
 import { SimulationStatus } from '../providers';
 import { CurrencyAmount } from '../util/amounts';
@@ -185,7 +185,7 @@ export type SwapAndAddParameters = {
 };
 
 /**
- * Provides functionality for finding optimal swap routes on the Uniswap protocol.
+ * Provides functionality for finding optimal swap routes on the Cytoswap protocol.
  *
  * @export
  * @abstract

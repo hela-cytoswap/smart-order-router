@@ -4,15 +4,15 @@
 
 import { JsonRpcProvider, JsonRpcSigner } from '@ethersproject/providers';
 import { AllowanceTransfer, PermitSingle } from '@uniswap/permit2-sdk';
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, CurrencyAmount, Ether, Percent, Token, TradeType, } from '@swapnity/sdk-core';
+import { Protocol } from '@cytoswap/router-sdk';
+import { ChainId, Currency, CurrencyAmount, Ether, Percent, Token, TradeType, } from '@cytoswap/sdk-core';
 import {
   PERMIT2_ADDRESS,
   UNIVERSAL_ROUTER_ADDRESS as UNIVERSAL_ROUTER_ADDRESS_BY_CHAIN,
-} from '@uniswap/universal-router-sdk';
-import { Permit2Permit } from '@uniswap/universal-router-sdk/dist/utils/inputTokens';
-import { Pair } from '@uniswap/v2-sdk';
-import { encodeSqrtRatioX96, FeeAmount, Pool } from '@uniswap/v3-sdk';
+} from '@cytoswap/universal-router-sdk';
+import { Permit2Permit } from '@cytoswap/universal-router-sdk/dist/utils/inputTokens';
+import { Pair } from '@cytoswap/v2-sdk';
+import { encodeSqrtRatioX96, FeeAmount, Pool } from '@cytoswap/v3-sdk';
 import bunyan from 'bunyan';
 import { BigNumber, providers, Wallet } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
@@ -51,7 +51,7 @@ import {
   TenderlySimulator,
   UNI_GOERLI,
   UNI_MAINNET,
-  UniswapMulticallProvider,
+  CytoswapMulticallProvider,
   USDC_BNB,
   USDC_ETHEREUM_GNOSIS,
   USDC_MAINNET,
@@ -142,7 +142,7 @@ const isTesterPKEnvironmentSet = (): boolean => {
 if (process.env.INTEG_TEST_DEBUG) {
   setGlobalLogger(
     bunyan.createLogger({
-      name: 'Uniswap Smart Order Router',
+      name: 'Cytoswap Smart Order Router',
       serializers: bunyan.stdSerializers,
       level: bunyan.DEBUG,
     })
@@ -165,7 +165,7 @@ describe('alpha router integration', () => {
 
   let alphaRouter: AlphaRouter;
   let customAlphaRouter: AlphaRouter;
-  const multicall2Provider = new UniswapMulticallProvider(
+  const multicall2Provider = new CytoswapMulticallProvider(
     ChainId.MAINNET,
     hardhat.provider
   );
@@ -2415,7 +2415,7 @@ describe('alpha router integration', () => {
 });
 
 describe('external class tests', () => {
-  const multicall2Provider = new UniswapMulticallProvider(
+  const multicall2Provider = new CytoswapMulticallProvider(
     ChainId.MAINNET,
     hardhat.provider
   );
@@ -2611,7 +2611,7 @@ describe('quote for other networks', () => {
           const chainProvider = ID_TO_PROVIDER(chain);
           const provider = new JsonRpcProvider(chainProvider, chain);
 
-          const multicall2Provider = new UniswapMulticallProvider(
+          const multicall2Provider = new CytoswapMulticallProvider(
             chain,
             provider
           );

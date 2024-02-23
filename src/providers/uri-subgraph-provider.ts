@@ -1,4 +1,4 @@
-import { ChainId } from '@swapnity/sdk-core';
+import { ChainId } from '@cytoswap/sdk-core';
 import retry from 'async-retry';
 import Timeout from 'await-timeout';
 import axios from 'axios';

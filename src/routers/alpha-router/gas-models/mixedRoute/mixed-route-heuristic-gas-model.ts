@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { partitionMixedRouteByProtocol } from '@uniswap/router-sdk';
-import { ChainId } from '@swapnity/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { Pool } from '@uniswap/v3-sdk';
+import { partitionMixedRouteByProtocol } from '@cytoswap/router-sdk';
+import { ChainId } from '@cytoswap/sdk-core';
+import { Pair } from '@cytoswap/v2-sdk';
+import { Pool } from '@cytoswap/v3-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 

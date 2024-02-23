@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, TradeType } from '@swapnity/sdk-core';
+import { Protocol } from '@cytoswap/router-sdk';
+import { ChainId, TradeType } from '@cytoswap/sdk-core';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 import FixedReverseHeap from 'mnemonist/fixed-reverse-heap';
