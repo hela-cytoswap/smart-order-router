@@ -9,7 +9,7 @@ export * from './eth-gas-station-info-gas-price-provider';
 export * from './gas-price-provider';
 export * from './legacy-gas-price-provider';
 export * from './multicall-provider';
-export * from './multicall-uniswap-provider';
+export * from './multicall-cytoswap-provider';
 export * from './on-chain-gas-price-provider';
 export * from './on-chain-quote-provider';
 export * from './simulation-provider';

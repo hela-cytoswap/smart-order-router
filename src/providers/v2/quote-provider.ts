@@ -1,9 +1,9 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { TradeType } from '@swapnity/sdk-core';
+import { TradeType } from '@cytoswap/sdk-core';
 import {
   InsufficientInputAmountError,
   InsufficientReservesError,
-} from '@uniswap/v2-sdk';
+} from '@cytoswap/v2-sdk';
 
 import { V2Route } from '../../routers/router';
 import { CurrencyAmount } from '../../util/amounts';

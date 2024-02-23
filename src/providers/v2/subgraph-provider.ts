@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@swapnity/sdk-core';
+import { ChainId, Token } from '@cytoswap/sdk-core';
 import retry from 'async-retry';
 import Timeout from 'await-timeout';
 import { gql, GraphQLClient } from 'graphql-request';

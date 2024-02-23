@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Protocol } from '@uniswap/router-sdk';
-import { Token, TradeType } from '@swapnity/sdk-core';
-import { Pool } from '@uniswap/v3-sdk';
+import { Protocol } from '@cytoswap/router-sdk';
+import { Token, TradeType } from '@cytoswap/sdk-core';
+import { Pool } from '@cytoswap/v3-sdk';
 import _ from 'lodash';
 
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';

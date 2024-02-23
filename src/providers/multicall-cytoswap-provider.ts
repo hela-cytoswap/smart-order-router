@@ -1,12 +1,12 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
-import { ChainId } from '@swapnity/sdk-core';
+import { ChainId } from '@cytoswap/sdk-core';
 import _ from 'lodash';
 import stats from 'stats-lite';
 
-import { UniswapInterfaceMulticall } from '../types/v3/UniswapInterfaceMulticall';
-import { UniswapInterfaceMulticall__factory } from '../types/v3/factories/UniswapInterfaceMulticall__factory';
-import { UNISWAP_MULTICALL_ADDRESSES } from '../util/addresses';
+import { CytoswapInterfaceMulticall } from '../types/v3/CytoswapInterfaceMulticall';
+import { CytoswapInterfaceMulticall__factory } from '../types/v3/factories/CytoswapInterfaceMulticall__factory';
+import { CYTOSWAP_MULTICALL_ADDRESSES } from '../util/addresses';
 import { log } from '../util/log';
 
 import {
@@ -17,21 +17,21 @@ import {
   Result,
 } from './multicall-provider';
 
-export type UniswapMulticallConfig = {
+export type CytoswapMulticallConfig = {
   gasLimitPerCallOverride?: number;
 };
 
 /**
- * The UniswapMulticall contract has added functionality for limiting the amount of gas
+ * The CytoswapMulticall contract has added functionality for limiting the amount of gas
  * that each call within the multicall can consume. This is useful for operations where
  * a call could consume such a large amount of gas that it causes the node to error out
  * with an out of gas error.
  *
  * @export
- * @class UniswapMulticallProvider
+ * @class CytoswapMulticallProvider
  */
-export class UniswapMulticallProvider extends IMulticallProvider<UniswapMulticallConfig> {
-  private multicallContract: UniswapInterfaceMulticall;
+export class CytoswapMulticallProvider extends IMulticallProvider<CytoswapMulticallConfig> {
+  private multicallContract: CytoswapInterfaceMulticall;
 
   constructor(
     protected chainId: ChainId,
@@ -39,15 +39,15 @@ export class UniswapMulticallProvider extends IMulticallProvider<UniswapMultical
     protected gasLimitPerCall = 1_000_000
   ) {
     super();
-    const multicallAddress = UNISWAP_MULTICALL_ADDRESSES[this.chainId];
+    const multicallAddress = CYTOSWAP_MULTICALL_ADDRESSES[this.chainId];
 
     if (!multicallAddress) {
       throw new Error(
-        `No address for Uniswap Multicall Contract on chain id: ${chainId}`
+        `No address for Cytoswap Multicall Contract on chain id: ${chainId}`
       );
     }
 
-    this.multicallContract = UniswapInterfaceMulticall__factory.connect(
+    this.multicallContract = CytoswapInterfaceMulticall__factory.connect(
       multicallAddress,
       this.provider
     );
@@ -137,7 +137,7 @@ export class UniswapMulticallProvider extends IMulticallProvider<UniswapMultical
   >(
     params: CallSameFunctionOnContractWithMultipleParams<
       TFunctionParams,
-      UniswapMulticallConfig
+      CytoswapMulticallConfig
     >
   ): Promise<{
     blockNumber: BigNumber;
@@ -228,7 +228,7 @@ export class UniswapMulticallProvider extends IMulticallProvider<UniswapMultical
   >(
     params: CallMultipleFunctionsOnSameContractParams<
       TFunctionParams,
-      UniswapMulticallConfig
+      CytoswapMulticallConfig
     >
   ): Promise<{
     blockNumber: BigNumber;

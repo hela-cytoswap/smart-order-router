@@ -3,14 +3,14 @@ import {
   Protocol,
   SwapRouter as SwapRouter02,
   Trade,
-} from '@uniswap/router-sdk';
-import { ChainId, Currency, TradeType } from '@swapnity/sdk-core';
+} from '@cytoswap/router-sdk';
+import { ChainId, Currency, TradeType } from '@cytoswap/sdk-core';
 import {
   SwapRouter as UniveralRouter,
   UNIVERSAL_ROUTER_ADDRESS,
-} from '@uniswap/universal-router-sdk';
-import { Route as V2RouteRaw } from '@uniswap/v2-sdk';
-import { Route as V3RouteRaw } from '@uniswap/v3-sdk';
+} from '@cytoswap/universal-router-sdk';
+import { Route as V2RouteRaw } from '@cytoswap/v2-sdk';
+import { Route as V3RouteRaw } from '@cytoswap/v3-sdk';
 import _ from 'lodash';
 
 import {

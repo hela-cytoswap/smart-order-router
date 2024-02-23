@@ -1,9 +1,9 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { BaseProvider } from '@ethersproject/providers';
-import { Protocol, SwapRouter } from '@uniswap/router-sdk';
-import { Fraction, Percent, TradeType } from '@swapnity/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { encodeSqrtRatioX96, Pool, Position } from '@uniswap/v3-sdk';
+import { Protocol, SwapRouter } from '@cytoswap/router-sdk';
+import { Fraction, Percent, TradeType } from '@cytoswap/sdk-core';
+import { Pair } from '@cytoswap/v2-sdk';
+import { encodeSqrtRatioX96, Pool, Position } from '@cytoswap/v3-sdk';
 import JSBI from 'jsbi';
 import _ from 'lodash';
 import sinon from 'sinon';
@@ -28,7 +28,7 @@ import {
   SwapToRatioStatus,
   SwapType,
   TokenProvider,
-  UniswapMulticallProvider,
+  CytoswapMulticallProvider,
   USDC_MAINNET as USDC,
   USDT_MAINNET as USDT,
   V2AmountQuote,
@@ -83,7 +83,7 @@ const helper = require('../../../../src/routers/alpha-router/functions/calculate
 
 describe('alpha router', () => {
   let mockProvider: sinon.SinonStubbedInstance<BaseProvider>;
-  let mockMulticallProvider: sinon.SinonStubbedInstance<UniswapMulticallProvider>;
+  let mockMulticallProvider: sinon.SinonStubbedInstance<CytoswapMulticallProvider>;
   let mockTokenProvider: sinon.SinonStubbedInstance<TokenProvider>;
 
   let mockV3PoolProvider: sinon.SinonStubbedInstance<V3PoolProvider>;
@@ -161,7 +161,7 @@ describe('alpha router', () => {
     mockProvider = sinon.createStubInstance(BaseProvider);
     mockProvider.getBlockNumber.resolves(mockBlock);
 
-    mockMulticallProvider = sinon.createStubInstance(UniswapMulticallProvider);
+    mockMulticallProvider = sinon.createStubInstance(CytoswapMulticallProvider);
 
     mockTokenProvider = sinon.createStubInstance(TokenProvider);
     const mockTokens = [

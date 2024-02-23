@@ -1,5 +1,5 @@
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Token, TradeType } from '@swapnity/sdk-core';
+import { Protocol } from '@cytoswap/router-sdk';
+import { ChainId, Token, TradeType } from '@cytoswap/sdk-core';
 import _ from 'lodash';
 
 import { MixedRoute, RouteWithValidQuote, V2Route, V3Route } from '../../../../routers';

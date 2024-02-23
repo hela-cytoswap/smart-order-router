@@ -4,8 +4,8 @@
  * @export
  * @interface IRouteCachingProvider
  */
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, CurrencyAmount, Token, TradeType } from '@swapnity/sdk-core';
+import { Protocol } from '@cytoswap/router-sdk';
+import { ChainId, Currency, CurrencyAmount, Token, TradeType } from '@cytoswap/sdk-core';
 
 import { CacheMode } from './model';
 import { CachedRoutes } from './model/cached-routes';

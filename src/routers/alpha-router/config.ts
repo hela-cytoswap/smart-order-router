@@ -1,4 +1,4 @@
-import { ChainId } from '@swapnity/sdk-core';
+import { ChainId } from '@cytoswap/sdk-core';
 
 import { AlphaRouterConfig } from './alpha-router';
 

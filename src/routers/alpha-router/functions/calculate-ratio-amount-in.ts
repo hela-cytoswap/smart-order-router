@@ -1,4 +1,4 @@
-import { Fraction } from '@swapnity/sdk-core';
+import { Fraction } from '@cytoswap/sdk-core';
 
 import { CurrencyAmount } from '../../../util/amounts';
 

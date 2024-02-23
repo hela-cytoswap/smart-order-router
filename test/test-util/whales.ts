@@ -1,4 +1,4 @@
-import { ChainId, Currency, Ether } from '@swapnity/sdk-core';
+import { ChainId, Currency, Ether } from '@cytoswap/sdk-core';
 import {
   CEUR_CELO,
   CEUR_CELO_ALFAJORES,

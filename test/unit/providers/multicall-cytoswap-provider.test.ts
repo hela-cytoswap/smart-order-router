@@ -1,13 +1,13 @@
 // import { BaseProvider } from '@ethersproject/providers'
 // import { mocked } from 'ts-jest/utils';
-// import { UniswapMulticallProvider } from '../../../src/providers/multicall-uniswap-provider';
+// import { CytoswapMulticallProvider } from '../../../src/providers/multicall-cytoswap-provider';
 // import { IERC20Metadata__factory } from '../../../src/types/v3/factories/IERC20Metadata__factory';
-// import { UniswapInterfaceMulticall__factory } from '../../../src/types/v3/factories/UniswapInterfaceMulticall__factory';
-// import { UniswapInterfaceMulticall } from '../../../src/types/v3/UniswapInterfaceMulticall';
+// import { CytoswapInterfaceMulticall__factory } from '../../../src/types/v3/factories/CytoswapInterfaceMulticall__factory';
+// import { CytoswapInterfaceMulticall } from '../../../src/types/v3/CytoswapInterfaceMulticall';
 
-/* jest.mock('../../src/types/v3/UniswapInterfaceMulticall', () => {
+/* jest.mock('../../src/types/v3/CytoswapInterfaceMulticall', () => {
   return {
-    UniswapInterfaceMulticall: jest.fn().mockImplementation(() => {
+    CytoswapInterfaceMulticall: jest.fn().mockImplementation(() => {
       return {
         callStatic: {
           multicall: () => {
@@ -28,21 +28,21 @@
   };
 }); */
 
-describe.skip('uniswap multicall provider', () => {
+describe.skip('cytoswap multicall provider', () => {
   test('placeholder', async () => {
     return;
   });
 
   /*
-  let uniswapMulticallProvider: UniswapMulticallProvider;
+  let cytoswapMulticallProvider: CytoswapMulticallProvider;
   const erc20Interface = IERC20Metadata__factory.createInterface();
 
   let mockProvider: jest.Mocked<BaseProvider>;
 
-  let multicallMock: jest.Mocked<UniswapInterfaceMulticall>;
+  let multicallMock: jest.Mocked<CytoswapInterfaceMulticall>;
 
   beforeAll(() => {
-    multicallMock = createMockInstance(UniswapInterfaceMulticall);
+    multicallMock = createMockInstance(CytoswapInterfaceMulticall);
 
     mocked(multicallMock.callStatic.multicall).mockResolvedValue({
       blockNumber: BigNumber.from(10000),
@@ -51,12 +51,12 @@ describe.skip('uniswap multicall provider', () => {
       ],
     } as any);
 
-    mocked(UniswapInterfaceMulticall__factory.connect).mockReturnValue(
-      UniswapInterfaceMulticall as any
+    mocked(CytoswapInterfaceMulticall__factory.connect).mockReturnValue(
+      CytoswapInterfaceMulticall as any
     );
 
     mockProvider = createMockInstance(BaseProvider);
-    uniswapMulticallProvider = new UniswapMulticallProvider(
+    cytoswapMulticallProvider = new CytoswapMulticallProvider(
       createMockInstance(BaseProvider)
     );
   });
@@ -64,7 +64,7 @@ describe.skip('uniswap multicall provider', () => {
   describe('callSameFunctionOnMultipleContracts', () => {
     test('succeeds', async () => {
       const result =
-        await uniswapMulticallProvider.callSameFunctionOnMultipleContracts<
+        await cytoswapMulticallProvider.callSameFunctionOnMultipleContracts<
           undefined,
           [string]
         >({

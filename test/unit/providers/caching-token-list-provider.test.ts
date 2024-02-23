@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@swapnity/sdk-core';
+import { ChainId, Token } from '@cytoswap/sdk-core';
 import _ from 'lodash';
 import sinon from 'sinon';
 import {

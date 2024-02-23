@@ -1,5 +1,5 @@
-import { Protocol } from '@uniswap/router-sdk';
-import { ChainId, Currency, CurrencyAmount, Token, TradeType } from '@swapnity/sdk-core';
+import { Protocol } from '@cytoswap/router-sdk';
+import { ChainId, Currency, CurrencyAmount, Token, TradeType } from '@cytoswap/sdk-core';
 import { CachedRoutes, CacheMode, IRouteCachingProvider } from '../../../../../../src';
 
 export class InMemoryRouteCachingProvider extends IRouteCachingProvider {
