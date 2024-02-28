@@ -104,6 +104,7 @@ export const WETH9: {
     | ChainId.GNOSIS
     | ChainId.MOONBEAM
     | ChainId.BNB
+    | ChainId.BNB_TESTNET
     | ChainId.AVALANCHE
   >]: Token;
 } = {
