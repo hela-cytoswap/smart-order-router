@@ -43,6 +43,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.AVALANCHE]: [],
   [ChainId.BASE_GOERLI]: [],
   [ChainId.BASE]: [],
+  [ChainId.HELA_TESTNET]: [],
   [ChainId.HELA]: []
 };
 

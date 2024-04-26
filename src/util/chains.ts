@@ -16,6 +16,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.BNB,
   ChainId.AVALANCHE,
   ChainId.BASE,
+  ChainId.HELA_TESTNET,
   ChainId.HELA
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
@@ -81,6 +82,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
     case 84531:
       return ChainId.BASE_GOERLI;
     case 666888:
+      return ChainId.HELA_TESTNET;
+    case 8668:
       return ChainId.HELA;
     default:
       throw new Error(`Unknown chain id: ${id}`);
@@ -105,6 +108,7 @@ export enum ChainName {
   AVALANCHE = 'avalanche-mainnet',
   BASE = 'base-mainnet',
   BASE_GOERLI = 'base-goerli',
+  HELA_TESTNET = 'hela-testnet',
   HELA = 'hela'
 }
 
@@ -183,6 +187,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
   ],
+  [ChainId.HELA_TESTNET]: [
+    'HLUSD',
+    'HLUSD',
+    '0x1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e1e'
+  ],
   [ChainId.HELA]: [
     'HLUSD',
     'HLUSD',
@@ -207,6 +216,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.BNB]: NativeCurrencyName.BNB,
   [ChainId.AVALANCHE]: NativeCurrencyName.AVALANCHE,
   [ChainId.BASE]: NativeCurrencyName.ETHER,
+  [ChainId.HELA_TESTNET]: NativeCurrencyName.HELA,
   [ChainId.HELA]: NativeCurrencyName.HELA
 };
 
@@ -247,6 +257,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
     case 84531:
       return ChainName.BASE_GOERLI;
     case 666888:
+      return ChainName.HELA_TESTNET;
+    case 8668:
       return ChainName.HELA;
     default:
       throw new Error(`Unknown chain id ABC: ${id}`);
@@ -287,6 +299,10 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_AVALANCHE!;
     case ChainId.BASE:
       return process.env.JSON_RPC_PROVIDER_BASE!;
+    case ChainId.HELA_TESTNET:
+      return 'https://testnet-rpc.helachain.com';
+    case ChainId.HELA:
+      return 'https://mainnet-rpc.helachain.com';
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -421,9 +437,16 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     'WETH',
     'Wrapped Ether'
   ),
+  [ChainId.HELA_TESTNET]: new Token(
+    ChainId.HELA_TESTNET,
+    '0xc544f0b5C0259172b6D6a1f6394aB21B5fd8F4Bf',
+    18,
+    'WHLUSD',
+    'Wrapped HLUSD'
+  ),
   [ChainId.HELA]: new Token(
     ChainId.HELA,
-    '0xc544f0b5C0259172b6D6a1f6394aB21B5fd8F4Bf',
+    '0x3a035615e101373FA9BA21c5bEa7FE4026fc40b4',
     18,
     'WHLUSD',
     'Wrapped HLUSD'
@@ -578,8 +601,8 @@ class AvalancheNativeCurrency extends NativeCurrency {
   }
 }
 
-function isHela(chainId: number): chainId is ChainId.HELA {
-  return chainId === ChainId.HELA;
+function isHela(chainId: number): chainId is ChainId.HELA | ChainId.HELA_TESTNET {
+  return chainId === ChainId.HELA || chainId === ChainId.HELA_TESTNET;
 }
 
 class HelaNativeCurrency extends NativeCurrency {
@@ -598,7 +621,7 @@ class HelaNativeCurrency extends NativeCurrency {
 
   public constructor(chainId: number) {
     if (!isHela(chainId)) throw new Error('Not Hela');
-    super(chainId, 18, 'HLUSD', 'Hela');
+    super(chainId, 18, 'HLUSD', 'HLUSD');
   }
 }
 

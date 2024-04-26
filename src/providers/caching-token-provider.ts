@@ -49,9 +49,14 @@ import {
   WBTC_OPTIMISM_GOERLI,
   WMATIC_POLYGON,
   WMATIC_POLYGON_MUMBAI,
-  HBTC_HELA,
+  HBTC_HELA_TESTNET,
+  HETH_HELA_TESTNET,
+  HUSDC_HELA_TESTNET,
   HETH_HELA,
-  HUSDC_HELA
+  HUSDC_HELA,
+  HUSDT_HELA,
+  HMATIC_HELA,
+  HBNB_HELA
 } from './token-provider';
 
 // These tokens will added to the Token cache on initialization.
@@ -147,10 +152,18 @@ export const CACHE_SEED_TOKENS: {
     USDC: USDC_BASE,
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.BASE],
   },
+  [ChainId.HELA_TESTNET]: {
+    HBTC: HBTC_HELA_TESTNET,
+    HETH: HETH_HELA_TESTNET,
+    HUSDC: HUSDC_HELA_TESTNET,
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.HELA_TESTNET]
+  },
   [ChainId.HELA]: {
-    HBTC: HBTC_HELA,
     HETH: HETH_HELA,
     HUSDC: HUSDC_HELA,
+    HUSDT: HUSDT_HELA,
+    HMATIC: HMATIC_HELA,
+    HBNB: HBNB_HELA,
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.HELA]
   }
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet

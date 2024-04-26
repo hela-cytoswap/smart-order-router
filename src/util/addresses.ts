@@ -7,6 +7,7 @@ export const BNB_TICK_LENS_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.BNB].tickLen
 export const BNB_NONFUNGIBLE_POSITION_MANAGER_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.BNB].nonfungiblePositionManagerAddress;
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const BNB_SWAP_ROUTER_02_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.BNB].swapRouter02Address!;
+export const HELA_TESTNET_SWAP_ROUTER_02_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.HELA_TESTNET].swapRouter02Address!;
 export const HELA_SWAP_ROUTER_02_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.HELA].swapRouter02Address!;
 export const BNB_V3_MIGRATOR_ADDRESS = CHAIN_TO_ADDRESSES_MAP[ChainId.BNB].v3MigratorAddress;
 
@@ -21,6 +22,7 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].v3CoreFactoryAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].v3CoreFactoryAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].v3CoreFactoryAddress,
+  [ChainId.HELA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.HELA_TESTNET].v3CoreFactoryAddress,
   [ChainId.HELA]: CHAIN_TO_ADDRESSES_MAP[ChainId.HELA].v3CoreFactoryAddress
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
@@ -36,6 +38,7 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].quoterAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].quoterAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].quoterAddress,
+  [ChainId.HELA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.HELA_TESTNET].v3CoreFactoryAddress,
   [ChainId.HELA]: CHAIN_TO_ADDRESSES_MAP[ChainId.HELA].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
@@ -56,6 +59,7 @@ export const CYTOSWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].multicallAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].multicallAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].multicallAddress,
+  [ChainId.HELA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.HELA_TESTNET].multicallAddress,
   [ChainId.HELA]: CHAIN_TO_ADDRESSES_MAP[ChainId.HELA].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
@@ -64,9 +68,15 @@ export const SWAP_ROUTER_02_ADDRESSES = (chainId: number): string => {
   if (chainId == ChainId.BNB) {
     return BNB_SWAP_ROUTER_02_ADDRESS;
   }
+
+  if (chainId == ChainId.HELA_TESTNET) {
+    return HELA_TESTNET_SWAP_ROUTER_02_ADDRESS;
+  }
+
   if (chainId == ChainId.HELA) {
     return HELA_SWAP_ROUTER_02_ADDRESS;
   }
+
   return '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45';
 };
 
@@ -171,9 +181,16 @@ export const WETH9: {
     'WETH',
     'Wrapped Ether'
   ),
+  [ChainId.HELA_TESTNET]: new Token(
+    ChainId.HELA_TESTNET,
+    '0xc544f0b5C0259172b6D6a1f6394aB21B5fd8F4Bf',
+    18,
+    'WHLUSD',
+    'Wrapped HLUSD'
+  ),
   [ChainId.HELA]: new Token(
     ChainId.HELA,
-    '0xc544f0b5C0259172b6D6a1f6394aB21B5fd8F4Bf',
+    '0x3a035615e101373FA9BA21c5bEa7FE4026fc40b4',
     18,
     'WHLUSD',
     'Wrapped HLUSD'
