@@ -63,8 +63,10 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
     'https://api.thegraph.com/subgraphs/name/lynnshaoyu/uniswap-v3-avax',
   [ChainId.BASE]: 
     'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/v0.0.1',
-  [ChainId.HELA]: 
+  [ChainId.HELA_TESTNET]: 
     'https://subgraph.snapresearch.xyz/subgraphs/name/swapnity-subgraph',
+  [ChainId.HELA]:
+    'https://subgraph.snapresearch.xyz/subgraphs/name/cytoswap-mainnet',
 };
 
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.

@@ -538,45 +538,97 @@ export const WBTC_MOONBEAM = new Token(
   'Wrapped BTC bridged using Multichain'
 );
 
-export const HETH_HELA = new Token(
-  ChainId.HELA,
+// Hela Testnet
+export const HETH_HELA_TESTNET = new Token(
+  ChainId.HELA_TESTNET,
   '0x42D8513433BC5f7cE9Ed7aaE612d1B2177Fe436A',
   18,
   'hETH',
   'Hela Wrapped Ether'
 );
 
-export const HUSDC_HELA = new Token(
-  ChainId.HELA,
+export const HUSDC_HELA_TESTNET = new Token(
+  ChainId.HELA_TESTNET,
   '0x945fcda98b56ab68541c62f40b8b3785366152bd',
   18,
   'hUSDC',
   'Hela USDC'
 );
 
-export const HBTC_HELA = new Token(
-  ChainId.HELA,
+export const HBTC_HELA_TESTNET = new Token(
+  ChainId.HELA_TESTNET,
   '0xde00dc04c87dcabe6611d77c4d475c925a335fc6',
   18,
   'hBTC',
   'Hela Wrapped Bitcoin'
 );
 
-export const USDT_HELA = new Token(
-  ChainId.HELA,
+export const USDT_HELA_TESTNET = new Token(
+  ChainId.HELA_TESTNET,
   '0x794a210a6f8b3c26998ed70220321f14b50ab7da',
   18,
   'hUSDT',
   'Hela USDT'
 );
 
-export const WHLUSD_HELA = new Token(
-  ChainId.HELA,
+export const WHLUSD_HELA_TESTNET = new Token(
+  ChainId.HELA_TESTNET,
   '0xc544f0b5C0259172b6D6a1f6394aB21B5fd8F4Bf',
   18,
   'WHLUSD',
   'Wrapped HLUSD'
 );
+
+
+// Hela
+export const HETH_HELA = new Token(
+  ChainId.HELA,
+  '0xD1ACd220C1100faFc871b9a7fB38968eab67b24D',
+  18,
+  'hETH',
+  'Hela Ether'
+);
+
+export const HUSDC_HELA = new Token(
+  ChainId.HELA,
+  '0xf5b85320a772b436cb8105441a3dB9bA29437B4a',
+  6,
+  'hUSDC',
+  'Hela USD Coin'
+);
+
+export const HUSDT_HELA = new Token(
+  ChainId.HELA,
+  '0xD3442073FA7cCF8a7c39d95dC125Cd59497aA078',
+  18,
+  'hUSDT',
+  'Hela Tether'
+);
+
+export const HMATIC_HELA = new Token(
+  ChainId.HELA,
+  '0xE32BC192AfcB48F61ca92dE8097A01257708C64c',
+  18,
+  'hMATIC',
+  'Hela Matic'
+);
+
+export const HBNB_HELA = new Token(
+  ChainId.HELA,
+  '0x20800b1471eBA6a3E8680aE62fb7574444c06865',
+  18,
+  'hBNB',
+  'Hela Binance Coin'
+);
+
+export const WHLUSD_HELA = new Token(
+  ChainId.HELA,
+  '0x3a035615e101373FA9BA21c5bEa7FE4026fc40b4',
+  18,
+  'WHLUSD',
+  'Wrapped HLUSD'
+);
+
 
 export class TokenProvider implements ITokenProvider {
   constructor(
